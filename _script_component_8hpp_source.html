@@ -138,7 +138,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="struct_script_component.html#a4b158be4d36bf0486a89d06a0694f1bd">   67</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_script_component.html#a4b158be4d36bf0486a89d06a0694f1bd">LoadScript</a>(<span class="keyword">const</span> std::string filename){</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        mScriptName = filename;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        py::exec(<span class="stringliteral">&quot;print(&#39;Loading script:&quot;</span>+mScriptName+<span class="stringliteral">&quot;&#39;)&quot;</span>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        std::string moduleName = <span class="stringliteral">&quot;assets.scripts.&quot;</span> + mScriptName;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        std::string moduleName = <span class="stringliteral">&quot;scripts.&quot;</span> + mScriptName;</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        py::module_ script_module = py::module_::import(moduleName.c_str());</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        mScriptObj = script_module.attr(<span class="stringliteral">&quot;Script&quot;</span>)();</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        py::object init_function = mScriptObj.attr(<span class="stringliteral">&quot;init&quot;</span>);</div>
